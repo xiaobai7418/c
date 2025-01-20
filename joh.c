@@ -1,5 +1,5 @@
 //  Created by www.runoob.com on 15/11/9.
-//  Copyright ? 2015Äê ²ËÄñ½Ì³Ì. All rights reserved.
+//  Copyright ? 2015ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ì³ï¿½. All rights reserved.
 //
  
 #include <stdio.h>
@@ -7,42 +7,41 @@
  
 #define N 1000
  
-// º¯Êý£ºÕÒµ½Ò»¸öÊýµÄËùÓÐÒòÊý²¢¼ÆËãÆäºÍ
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 int findDivisors(int num, int **divisors) {
-    int sum = 1; // ³õÊ¼»¯ÒòÊýºÍÎª1£¨1ÊÇËùÓÐÊýµÄÒòÊý£©
-    int count = 1; // ³õÊ¼»¯ÒòÊý¼ÆÊý
-    *divisors = (int*)malloc(num * sizeof(int)); // ¶¯Ì¬·ÖÅäÄÚ´æ´æ´¢ÒòÊý
-    (*divisors)[0] = 1; // µÚÒ»¸öÒòÊýÊÇ1
+    int sum = 1; // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª1ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    int count = 1; // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    *divisors = (int*)malloc(num * sizeof(int)); // ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½
+    (*divisors)[0] = 1; // ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1
  
-    // ±éÀú´Ó2µ½num/2µÄËùÓÐÊý£¬Ñ°ÕÒÒòÊý
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½num/2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     for (int j = 2; j <= num / 2; ++j) {
-        if (num % j == 0) { // Èç¹ûjÊÇnumµÄÒòÊý
-            sum += j; // ¼Óµ½ÒòÊýºÍÖÐ
-            (*divisors)[count++] = j; // ´æ´¢ÒòÊý
+        if (num % j == 0) { // ï¿½ï¿½ï¿½jï¿½ï¿½numï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            sum += j; // ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            (*divisors)[count++] = j; // ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½
         }
     }
  
-    return sum; // ·µ»ØÒòÊýºÍ
+    return sum; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 }
  
 int main() {
-    // ±éÀú´Ó2µ½NµÄËùÓÐÊý£¬Ñ°ÕÒÍêÃÀÊý
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     for (int i = 2; i <= N; ++i) {
-        int *divisors; // Ö¸ÕëÓÃÓÚ´æ´¢ÒòÊýÊý×é
-        int sum = findDivisors(i, &divisors); // »ñÈ¡ÒòÊýºÍ
+        int *divisors; // Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½Ú´æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        int sum = findDivisors(i, &divisors); // ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  
-        // Èç¹ûµ±Ç°ÊýÊÇÍêÃÀÊý£¨ÒòÊýºÍµÈÓÚÊý±¾Éí£©
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (i == sum) {
             printf("%d = %d", i, divisors[0]);
-            for (int n = 1; divisors[n] != 0; ++n) { // Êä³öËùÓÐÒòÊý
+            for (int n = 1; divisors[n] != 0; ++n) { // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 printf(" + %d", divisors[n]);
             }
             printf("\n");
         }
  
-        free(divisors); // ÊÍ·Å¶¯Ì¬·ÖÅäµÄÄÚ´æ
+        free(divisors); // ï¿½Í·Å¶ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½
     }
  
-    return 0; // ·µ»Ø0±íÊ¾³ÌÐò³É¹¦½áÊø
+    return 0; // ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½
 }
-//ÎÒÊÇ±ò±ò
